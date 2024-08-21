@@ -47,7 +47,7 @@ app.get('/print', async (req, res) => {
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Print Lyrics</title>
+                <title>Print | LeadSheet </title>
                 <link href="/print.css" rel="stylesheet">
             </head>
             <body>
