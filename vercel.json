@@ -1,0 +1,29 @@
+{
+    "version": 2,
+    "functions": {
+      "index.js": {
+        "runtime": "vercel-node@20.x"
+      }
+    },
+    "routes": [
+      {
+        "src": "/print",
+        "dest": "/print.js"
+      },
+      {
+        "src": "/",
+        "dest": "/index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.js"
+      }
+    ],
+    "builds": [
+      {
+        "src": "public/**/*",
+        "use": "@vercel/static-build"
+      }
+    ]
+  }
+  
