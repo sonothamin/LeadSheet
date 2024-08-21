@@ -1,8 +1,21 @@
 {
-  "rewrites": [
+  "version": 2,
+  "functions": {
+    "index.js": {
+      "runtime": "vercel-node@20.0"
+    },
+    "print.js": {
+      "runtime": "vercel-node@20.0"
+    }
+  },
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.js"
+      "src": "/print/(.*)",
+      "dest": "/print.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
     }
   ]
 }
