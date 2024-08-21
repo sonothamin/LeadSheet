@@ -8,7 +8,7 @@
     "routes": [
       {
         "src": "/print",
-        "dest": "/print.js"
+         "dest": "/print.js"
       },
       {
         "src": "/",
