@@ -4,10 +4,17 @@
     {
       "src": "./index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "./print.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
-    
+    {
+      "src": "/print/(.*)",
+      "dest": "/print.js"
+    },
     {
       "src": "/(.*)",
       "dest": "/"
