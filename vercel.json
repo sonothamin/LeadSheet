@@ -6,11 +6,8 @@
       }
     },
     "routes": [
-      {
-        "src": "/print",
-         "dest": "/print.js"
-      },
-      {
+        
+        {
         "src": "/",
         "dest": "/index.js"
       },
