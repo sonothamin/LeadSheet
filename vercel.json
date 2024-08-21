@@ -1,8 +1,5 @@
-{
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
+{  "functions": {
+    "/index.js": {
+      "runtime": "vercel-node@20.x"  // Use the Node.js runtime version you need
     }
-  ]
 }
