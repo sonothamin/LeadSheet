@@ -1,11 +1,11 @@
 {
     "version": 2,
     "functions": {
-      "index.js": {
-        "runtime": "@vercel/node"
-      },
+        "index.js": {
+          "runtime": "vercel-node@20.x"
+        },
       "print.js": {
-        "runtime": "@vercel/node"
+        "runtime": "vercel-node@20.x"
       }
     },
     "routes": [
