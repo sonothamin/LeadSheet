@@ -1,7 +1,3 @@
-Here’s a technical description for your GitHub repository:
-
----
-
 ## LyricsMD
 
 **LyricsMD** is a web application that retrieves and displays song lyrics using the Genius API. 
