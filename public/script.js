@@ -1,7 +1,7 @@
 document.getElementById('print-btn').addEventListener('click', function () {
     var songId = new URLSearchParams(window.location.search).get('song_id');
     if (songId) {
-        window.location.href = '/print/' + encodeURIComponent(songId);
+        window.location.href = '/print/?song_id=' + encodeURIComponent(songId);
     } else {
         alert('No song selected for printing.');
     }
