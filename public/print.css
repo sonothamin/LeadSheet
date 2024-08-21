@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+}
+
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    width: 700px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-inner {
+    display: flex;
+    align-items: flex-start;
+}
+
+.card-image {
+    flex: 0 0 150px; /* Fixed width for image */
+    padding-right: 10px;
+    
+}
+
+.card-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+
+.lyrics-container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 25px;
+    font-size: 12pt;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
