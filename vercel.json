@@ -2,10 +2,10 @@
   "version": 2,
   "functions": {
     "index.js": {
-      "runtime": "vercel-node@20.0"
+      "runtime": "vercel-node@20.0.0"
     },
     "print.js": {
-      "runtime": "vercel-node@20.0"
+      "runtime": "vercel-node@20.0.0"
     }
   },
   "routes": [
