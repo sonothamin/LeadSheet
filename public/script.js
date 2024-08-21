@@ -12,7 +12,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'lyrics.txt';
+    a.download = '${title}.txt';
     a.click();
     URL.revokeObjectURL(url);
 });
