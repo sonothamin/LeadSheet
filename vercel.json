@@ -1,12 +1,22 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "index.js",
-        "use": "@vercel/node"
+    "functions": {
+      "index.js": {
+        "runtime": "vercel-node@20.x"
+      },
+      "print.js": {
+        "runtime": "vercel-node@20.x"
       }
-    ],
+    },
     "routes": [
+      {
+        "src": "/api/lyrics",
+        "dest": "/index.js"
+      },
+      {
+        "src": "/print",
+        "dest": "/print.js"
+      },
       {
         "src": "/(.*)",
         "dest": "/index.js"
