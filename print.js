@@ -1,5 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const axios = require('axios');  // Added axios import
 const cheerio = require('cheerio');
 require('dotenv').config();
 
@@ -8,8 +9,10 @@ const PORT = process.env.PORT || 3000;
 const GENIUS_API_TOKEN = process.env.GENIUS_API_TOKEN;
 
 function sanitizeLyrics(html) {
-    const $ = cheerio.load(html);
-    return $.text().replace(/\s+/g, ' ').trim();
+    return html.replace(/<a[^>]*>(.*?)<\/a>/gi, '$1')
+               .replace(/(class|id)="[^"]*"/gi, '')
+               .replace(/\s+/g, ' ')
+               .trim();
 }
 
 app.get('/print', async (req, res) => {
@@ -25,6 +28,11 @@ app.get('/print', async (req, res) => {
                 'Authorization': `Bearer ${GENIUS_API_TOKEN}`
             }
         });
+
+        if (!songResponse.ok) {
+            throw new Error('Failed to fetch song details');
+        }
+
         const songData = await songResponse.json();
         const { song } = songData.response;
         const lyricsPath = song.path;
@@ -35,10 +43,10 @@ app.get('/print', async (req, res) => {
         const album = song.album?.name ?? 'Unknown';
 
         // Fetch lyrics page
-        const lyricsResponse = await fetch(`https://genius.com${lyricsPath}`);
-        const lyricsHtml = await lyricsResponse.text();
-        const $ = cheerio.load(lyricsHtml);
-        const lyrics = sanitizeLyrics($('.lyrics').html() || "Lyrics not found");
+        const lyricsPage = await axios.get(`https://genius.com${lyricsPath}`);
+        const $ = cheerio.load(lyricsPage.data);
+        const lyricsElement = $('div[data-lyrics-container="true"]').first();
+        const lyrics = sanitizeLyrics($.html(lyricsElement));
 
         // Send HTML response
         res.send(`
